@@ -18,9 +18,9 @@ def print_tree(lights):
     ]
     
     colors = {
-        'green': '\033[92m',
-        'yellow': '\033[93m',
-        'red': '\033[91m',
+        'pink': '\033[95m',
+        'purple': '\033[35m',
+        'white': '\033[97m',
         'brown': '\033[33m',
         'reset': '\033[0m'
     }
