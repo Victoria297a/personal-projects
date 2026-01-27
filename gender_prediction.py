@@ -12,7 +12,7 @@ def main():
 	clf = DecisionTreeClassifier()
 	clf.fit(x, y)
 
-	prediction = clf.predict([[128, 29, 33]])
+	prediction = clf.predict([[int(input("Height: ")), int(input("Weight: ")), int(input("Shoe size: "))]])
 	print(prediction)
 
 
