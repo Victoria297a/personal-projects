@@ -1,0 +1,59 @@
+{
+  "parkingZones": [
+    {
+      "id": 1,
+      "name": "Zone A",
+      "coordinates": {
+        "latitude": 42.6977,
+        "longitude": 23.3219
+      },
+      "availability": 0.8,
+      "totalSpaces": 50,
+      "availableSpaces": 40
+    },
+    {
+      "id": 2,
+      "name": "Zone B",
+      "coordinates": {
+        "latitude": 42.6950,
+        "longitude": 23.3320
+      },
+      "availability": 0.5,
+      "totalSpaces": 30,
+      "availableSpaces": 15
+    },
+    {
+      "id": 3,
+      "name": "Zone C",
+      "coordinates": {
+        "latitude": 42.7030,
+        "longitude": 23.3190
+      },
+      "availability": 0.3,
+      "totalSpaces": 20,
+      "availableSpaces": 6
+    },
+    {
+      "id": 4,
+      "name": "Zone D",
+      "coordinates": {
+        "latitude": 42.7060,
+        "longitude": 23.3170
+      },
+      "availability": 0.9,
+      "totalSpaces": 40,
+      "availableSpaces": 36
+    },
+    {
+      "id": 5,
+      "name": "Zone E",
+      "coordinates": {
+        "latitude": 42.7040,
+        "longitude": 23.3250
+      },
+      "availability": 0.6,
+      "totalSpaces": 25,
+      "availableSpaces": 15
+    }
+  ]
+}

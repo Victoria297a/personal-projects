@@ -1,0 +1,15 @@
+{
+  "name": "parkpulse-sofia",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "frontend": "npm --prefix frontend run dev",
+    "backend": "npm --prefix backend run start",
+    "dev": "concurrently \"npm run frontend\" \"npm run backend\"",
+    "build": "npm --prefix frontend run build"
+  },
+  "dependencies": {
+    "concurrently": "^6.0.0"
+  },
+  "devDependencies": {}
+}

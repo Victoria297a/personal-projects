@@ -1,0 +1,23 @@
+{
+  "name": "parkpulse-sofia",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "tailwindcss": "^2.2.19"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.3.7",
+    "postcss": "^8.3.6",
+    "typescript": "^4.4.3",
+    "vite": "^2.6.4"
+  }
+}
