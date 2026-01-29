@@ -1,0 +1,144 @@
+{
+  "events": [
+    {
+      "id": "event-1",
+      "title": "Levski vs CSKA Derby",
+      "type": "sports",
+      "venue": "Vasil Levski National Stadium",
+      "coordinates": [42.6886, 23.3377],
+      "date": "2026-02-15",
+      "startTime": "16:00",
+      "endTime": "18:30",
+      "expectedAttendance": 35000,
+      "parkingImpact": "high",
+      "impactScore": 95,
+      "affectedZones": ["zone-1", "zone-2"],
+      "recommendedParking": [
+        {
+          "name": "Bulgaria Blvd Parking",
+          "distance": "1.2km",
+          "availabilityScore": 70
+        },
+        {
+          "name": "Joliot-Curie Metro Station",
+          "distance": "800m",
+          "availabilityScore": 60
+        }
+      ],
+      "alternativeTransport": ["Metro Line 2", "Bus 76, 213"],
+      "alert": "Heavy congestion predicted around stadium. Arrive 90 minutes early."
+    },
+    {
+      "id": "event-2",
+      "title": "NDK Concert Hall - Classical Night",
+      "type": "cultural",
+      "venue": "National Palace of Culture",
+      "coordinates": [42.6852, 23.3194],
+      "date": "2026-02-10",
+      "startTime": "19:00",
+      "endTime": "22:00",
+      "expectedAttendance": 3500,
+      "parkingImpact": "medium",
+      "impactScore": 65,
+      "affectedZones": ["zone-5", "zone-2"],
+      "recommendedParking": [
+        {
+          "name": "Vitosha Blvd Underground",
+          "distance": "600m",
+          "availabilityScore": 55
+        },
+        {
+          "name": "Graf Ignatiev Street",
+          "distance": "900m",
+          "availabilityScore": 70
+        }
+      ],
+      "alternativeTransport": ["Metro NDK Station", "Tram 5"],
+      "alert": "Expect high parking demand in Lozenets area from 18:00 until 23:00."
+    },
+    {
+      "id": "event-3",
+      "title": "Paradise Center Weekend Shopping",
+      "type": "commercial",
+      "venue": "Paradise Center Mall",
+      "coordinates": [42.6819, 23.3203],
+      "date": "2026-02-08",
+      "startTime": "12:00",
+      "endTime": "20:00",
+      "expectedAttendance": 15000,
+      "parkingImpact": "medium",
+      "impactScore": 65,
+      "affectedZones": ["zone-2"],
+      "recommendedParking": [
+        {
+          "name": "Mall Underground Parking",
+          "distance": "0m",
+          "availabilityScore": 40
+        },
+        {
+          "name": "Cherni Vrah Blvd",
+          "distance": "400m",
+          "availabilityScore": 65
+        }
+      ],
+      "alternativeTransport": ["Metro James Bourchier", "Bus 94"],
+      "alert": "Mall parking fills quickly on weekends. Consider nearby streets."
+    },
+    {
+      "id": "event-4",
+      "title": "Arena Sofia Concert",
+      "type": "entertainment",
+      "venue": "Arena Sofia",
+      "coordinates": [42.6564, 23.3827],
+      "date": "2026-02-22",
+      "startTime": "19:30",
+      "endTime": "22:00",
+      "expectedAttendance": 12000,
+      "parkingImpact": "low",
+      "impactScore": 35,
+      "affectedZones": ["zone-3"],
+      "recommendedParking": [
+        {
+          "name": "Arena Parking Lot",
+          "distance": "200m",
+          "availabilityScore": 80
+        },
+        {
+          "name": "Tsarigradsko Shose",
+          "distance": "500m",
+          "availabilityScore": 85
+        }
+      ],
+      "alternativeTransport": ["Bus 213, 305"],
+      "alert": "Adequate parking available. Low impact on central Sofia."
+    },
+    {
+      "id": "event-5",
+      "title": "Sofia University Graduation Week",
+      "type": "academic",
+      "venue": "Sofia University St. Kliment Ohridski",
+      "coordinates": [42.6948, 23.3313],
+      "date": "2026-02-18",
+      "startTime": "10:00",
+      "endTime": "17:00",
+      "expectedAttendance": 5000,
+      "parkingImpact": "medium",
+      "impactScore": 55,
+      "affectedZones": ["zone-1", "zone-4"],
+      "recommendedParking": [
+        {
+          "name": "Orlov Most Area",
+          "distance": "700m",
+          "availabilityScore": 50
+        },
+        {
+          "name": "Dondukov Blvd",
+          "distance": "500m",
+          "availabilityScore": 45
+        }
+      ],
+      "alternativeTransport": ["Metro Serdika", "Tram 20, 22"],
+      "alert": "Increased activity around university district. Limited street parking."
+    }
+  ]
+}

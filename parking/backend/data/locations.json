@@ -1,0 +1,173 @@
+{
+  "offices": [
+    {
+      "id": "office-1",
+      "name": "Sofia Tech Park",
+      "type": "office",
+      "coordinates": [42.6527, 23.3719],
+      "address": "111 Tsarigradsko Shose, Mladost",
+      "nearbyParking": [
+        {
+          "zoneId": "zone-3",
+          "distance": "200m",
+          "availabilityScore": 85,
+          "walkTime": 3
+        }
+      ]
+    },
+    {
+      "id": "office-2",
+      "name": "Business Park Sofia",
+      "type": "office",
+      "coordinates": [42.6977, 23.3269],
+      "address": "1 Mladost Blvd, Center",
+      "nearbyParking": [
+        {
+          "zoneId": "zone-1",
+          "distance": "150m",
+          "availabilityScore": 15,
+          "walkTime": 2
+        }
+      ]
+    },
+    {
+      "id": "office-3",
+      "name": "Capital Fort",
+      "type": "office",
+      "coordinates": [42.6827, 23.3219],
+      "address": "Cherni Vrah Blvd, Lozenets",
+      "nearbyParking": [
+        {
+          "zoneId": "zone-2",
+          "distance": "300m",
+          "availabilityScore": 55,
+          "walkTime": 5
+        }
+      ]
+    }
+  ],
+  "hospitals": [
+    {
+      "id": "hospital-1",
+      "name": "Pirogov Emergency Hospital",
+      "type": "hospital",
+      "coordinates": [42.6677, 23.3419],
+      "address": "21 Totleben Blvd",
+      "nearbyParking": [
+        {
+          "zoneId": "zone-2",
+          "distance": "400m",
+          "availabilityScore": 50,
+          "walkTime": 6
+        }
+      ],
+      "emergencyAccess": true
+    },
+    {
+      "id": "hospital-2",
+      "name": "Tokuda Hospital",
+      "type": "hospital",
+      "coordinates": [42.6727, 23.3119],
+      "address": "51B Nikola Vaptsarov Blvd",
+      "nearbyParking": [
+        {
+          "zoneId": "zone-2",
+          "distance": "100m",
+          "availabilityScore": 60,
+          "walkTime": 2
+        }
+      ],
+      "emergencyAccess": true
+    },
+    {
+      "id": "hospital-3",
+      "name": "University Hospital Alexandrovska",
+      "type": "hospital",
+      "coordinates": [42.6977, 23.3369],
+      "address": "1 Georgi Sofiiski Blvd",
+      "nearbyParking": [
+        {
+          "zoneId": "zone-1",
+          "distance": "250m",
+          "availabilityScore": 20,
+          "walkTime": 4
+        }
+      ],
+      "emergencyAccess": true
+    }
+  ],
+  "schools": [
+    {
+      "id": "school-1",
+      "name": "91 German Language School",
+      "type": "school",
+      "coordinates": [42.6827, 23.3169],
+      "address": "23 Frederic Joliot-Curie Blvd, Lozenets",
+      "nearbyParking": [
+        {
+          "zoneId": "zone-2",
+          "distance": "200m",
+          "availabilityScore": 45,
+          "walkTime": 3
+        }
+      ],
+      "safetyZone": true,
+      "dropOffPeakHours": ["07:30-08:30", "13:30-14:30"],
+      "congestionWarning": "High traffic during drop-off/pick-up times"
+    },
+    {
+      "id": "school-2",
+      "name": "High School of Mathematics",
+      "type": "school",
+      "coordinates": [42.6977, 23.3219],
+      "address": "61 Iskar Street, Center",
+      "nearbyParking": [
+        {
+          "zoneId": "zone-1",
+          "distance": "300m",
+          "availabilityScore": 25,
+          "walkTime": 5
+        }
+      ],
+      "safetyZone": true,
+      "dropOffPeakHours": ["07:45-08:15", "14:00-14:30"],
+      "congestionWarning": "Limited parking during school hours"
+    },
+    {
+      "id": "school-3",
+      "name": "Primary School Ivan Vazov",
+      "type": "school",
+      "coordinates": [42.6527, 23.3219],
+      "address": "Studentski Grad",
+      "nearbyParking": [
+        {
+          "zoneId": "zone-4",
+          "distance": "150m",
+          "availabilityScore": 60,
+          "walkTime": 2
+        }
+      ],
+      "safetyZone": true,
+      "dropOffPeakHours": ["07:30-08:00", "12:00-12:30"],
+      "congestionWarning": "Moderate traffic during drop-off times"
+    },
+    {
+      "id": "school-4",
+      "name": "International School of Sofia",
+      "type": "school",
+      "coordinates": [42.6477, 23.3719],
+      "address": "Mladost",
+      "nearbyParking": [
+        {
+          "zoneId": "zone-3",
+          "distance": "100m",
+          "availabilityScore": 80,
+          "walkTime": 2
+        }
+      ],
+      "safetyZone": true,
+      "dropOffPeakHours": ["08:00-08:30", "15:00-15:30"],
+      "congestionWarning": "Good parking availability"
+    }
+  ]
+}

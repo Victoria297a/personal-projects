@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Sofia Events & Parking Predictions</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            min-height: max(884px, 100dvh);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .impact-high { color: #ef4444; }
+        .impact-medium { color: #f59e0b; }
+        .impact-low { color: #10b981; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display">
+    <!-- Main Mobile Layout -->
+    <div class="relative flex h-screen w-full flex-col overflow-hidden">
+        <!-- Top App Bar -->
+        <header class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between z-10">
+            <div class="flex items-center gap-3">
+                <button class="text-slate-900 dark:text-white flex size-10 items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+                <h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight">ParkPulse Sofia</h2>
+            </div>
+            <div class="flex items-center gap-2">
+                <button class="flex size-10 items-center justify-center rounded-lg bg-transparent text-slate-900 dark:text-white">
+                    <span class="material-symbols-outlined">notifications</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content Area (Scrollable) -->
+        <main class="flex-1 overflow-y-auto pb-24">
+            <!-- Search Bar Component -->
+            <div class="px-4 py-3">
+                <label class="flex flex-col min-w-40 h-12 w-full">
+                    <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+                        <div class="text-[#92adc9] flex border-none bg-slate-200 dark:bg-[#233648] items-center justify-center pl-4 rounded-l-lg" data-icon="search">
+                            <span class="material-symbols-outlined">search</span>
+                        </div>
+                        <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-0 border-none bg-slate-200 dark:bg-[#233648] focus:border-none h-full placeholder:text-[#92adc9] px-4 rounded-l-none pl-2 text-base font-normal leading-normal" placeholder="Search events or Sofia areas..." value=""/>
+                    </div>
+                </label>
+            </div>
+
+            <!-- Smart Suggestion Card -->
+            <div class="p-4 @container">
+                <div class="flex flex-col items-stretch justify-start rounded-xl @xl:flex-row @xl:items-start shadow-xl bg-gradient-to-br from-[#192633] to-[#111a22] border border-white/5 overflow-hidden">
+                    <div class="w-full bg-center bg-no-repeat aspect-[21/9] bg-cover relative" data-alt="Modern high-angle view of Sofia NDK at dusk" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAaRQq7wAeyXmSRulB24SaA00dv1CHzjg0sVXE6qz0zpXA9gBv7bug4kvdau8xwhx45G35ODEXCgsl1JxwIEi3c4pL8vWMkt0Ua7Ux232vICQ4XwMaXYfQMNsL4Rl9_tAItjI3F0le8A6HQnSKiUZA1OceuCEc34nX7jE1SB0BLyxxmHCRXq3Fay-ChaOwnjUFZzF60dsAuMLdgNnIn2ipM8Mc8av4h5nLwZZHyhM9NNHEs0DQVWUWFAOWNv_Co0_PC97WUvcgNRlMr");'>
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#192633] to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="px-2 py-1 bg-primary text-[10px] font-bold text-white rounded uppercase tracking-widest">AI Prediction</span>
+                        </div>
+                    </div>
+                    <div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-1 py-4 px-4">
+                        <p class="text-white text-lg font-bold leading-tight tracking-tight">Proactive Parking Tip</p>
+                        <div class="flex flex-col gap-3">
+                            <p class="text-[#92adc9] text-sm font-normal leading-relaxed">
+                                Heavy congestion expected near NDK from 18:00 due to concert. Use Buffer Parking 'Bulgaria Blvd' for seamless access.
+                            </p>
+                            <div class="flex items-center justify-between mt-2">
+                                <div class="flex gap-1 text-primary items-center">
+                                    <span class="material-symbols-outlined text-sm">bolt</span>
+                                    <span class="text-xs font-semibold">Saved 12 mins avg.</span>
+                                </div>
+                                <button class="flex min-w-[100px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary text-white text-sm font-medium leading-normal shadow-lg shadow-primary/20">
+                                    <span class="truncate">Navigate</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- School Mode Toggle (List Item style) -->
+            <div class="px-4 mb-4">
+                <div class="flex items-center gap-4 bg-slate-100 dark:bg-[#192633] px-4 min-h-14 justify-between rounded-xl border border-slate-200 dark:border-white/5">
+                    <div class="flex items-center gap-4">
+                        <div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-10">
+                            <span class="material-symbols-outlined">school</span>
+                        </div>
+                        <div>
+                            <p class="text-slate-900 dark:text-white text-base font-semibold leading-none">School Mode</p>
+                            <p class="text-slate-500 dark:text-slate-400 text-xs mt-1">Notify 15m before drop-off peaks</p>
+                        </div>
+                    </div>
+                    <div class="shrink-0">
+                        <label class="relative flex h-[28px] w-[48px] cursor-pointer items-center rounded-full border-none bg-slate-300 dark:bg-[#233648] p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary transition-all">
+                            <div class="h-full aspect-square rounded-full bg-white shadow-md"></div>
+                            <input checked="" class="invisible absolute" type="checkbox"/>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Events List Header -->
+            <div class="px-4 py-2 flex items-center justify-between">
+                <h3 class="text-slate-900 dark:text-white text-md font-bold uppercase tracking-wider text-xs opacity-70">Upcoming Events & Peaks</h3>
+                <span class="text-[10px] text-slate-500">Updated 2m ago</span>
+            </div>
+
+            <!-- Event Items -->
+            <div class="flex flex-col gap-3 px-4">
+                <!-- Event 1 -->
+                <div class="bg-white dark:bg-[#192633] rounded-xl p-4 border border-slate-200 dark:border-white/5 flex gap-4">
+                    <div class="flex flex-col items-center justify-center bg-slate-100 dark:bg-[#233648] rounded-lg min-w-[56px] h-[56px]">
+                        <span class="text-primary text-lg font-bold">19</span>
+                        <span class="text-[10px] uppercase font-medium dark:text-slate-400">OCT</span>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start mb-1">
+                            <h4 class="text-slate-900 dark:text-white font-bold text-base leading-tight">Levski vs CSKA</h4>
+                            <span class="px-2 py-0.5 rounded bg-red-500/10 text-red-500 text-[10px] font-bold border border-red-500/20">95% IMPACT</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-xs mb-3">
+                            <span class="material-symbols-outlined text-sm">location_on</span>
+                            <span class="truncate">Vasil Levski National Stadium</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs dark:text-slate-300 font-medium bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">16:00 - 18:30</span>
+                            <button class="text-primary text-xs font-bold flex items-center gap-1">
+                                PARKING OPTIONS <span class="material-symbols-outlined text-sm">chevron_right</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="bg-white dark:bg-[#192633] rounded-xl p-4 border border-slate-200 dark:border-white/5 flex gap-4">
+                    <div class="flex flex-col items-center justify-center bg-slate-100 dark:bg-[#233648] rounded-lg min-w-[56px] h-[56px]">
+                        <span class="text-primary text-lg font-bold">20</span>
+                        <span class="text-[10px] uppercase font-medium dark:text-slate-400">OCT</span>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start mb-1">
+                            <h4 class="text-slate-900 dark:text-white font-bold text-base leading-tight">Mall Paradise Peak</h4>
+                            <span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-500 text-[10px] font-bold border border-amber-500/20">65% IMPACT</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-xs mb-3">
+                            <span class="material-symbols-outlined text-sm">location_on</span>
+                            <span class="truncate">Paradise Center, Lozenets</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs dark:text-slate-300 font-medium bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">12:00 - 20:00</span>
+                            <button class="text-primary text-xs font-bold flex items-center gap-1">
+                                LIVE SLOTS <span class="material-symbols-outlined text-sm">chevron_right</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="bg-white dark:bg-[#192633] rounded-xl p-4 border border-slate-200 dark:border-white/5 flex gap-4 opacity-80">
+                    <div class="flex flex-col items-center justify-center bg-slate-100 dark:bg-[#233648] rounded-lg min-w-[56px] h-[56px]">
+                        <span class="text-primary text-lg font-bold">22</span>
+                        <span class="text-[10px] uppercase font-medium dark:text-slate-400">OCT</span>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start mb-1">
+                            <h4 class="text-slate-900 dark:text-white font-bold text-base leading-tight">Arena Sofia Concert</h4>
+                            <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-500 text-[10px] font-bold border border-emerald-500/20">LOW IMPACT</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-xs mb-3">
+                            <span class="material-symbols-outlined text-sm">location_on</span>
+                            <span class="truncate">Arena Sofia (4km)</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs dark:text-slate-300 font-medium bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">19:30 - 22:00</span>
+                            <button class="text-primary text-xs font-bold flex items-center gap-1">
+                                DETAILS <span class="material-symbols-outlined text-sm">chevron_right</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Fixed Bottom Navigation (iOS Style) -->
+        <nav class="absolute bottom-0 w-full bg-white/80 dark:bg-background-dark/80 backdrop-blur-xl border-t border-slate-200 dark:border-white/5 px-6 py-3 pb-8 flex items-center justify-between z-20">
+            <div class="flex flex-col items-center gap-1 text-slate-400">
+                <span class="material-symbols-outlined">map</span>
+                <span class="text-[10px] font-medium">Map</span>
+            </div>
+            <div class="flex flex-col items-center gap-1 text-primary">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">analytics</span>
+                <span class="text-[10px] font-bold">Predictions</span>
+            </div>
+            <div class="flex flex-col items-center gap-1 text-slate-400">
+                <span class="material-symbols-outlined">history</span>
+                <span class="text-[10px] font-medium">History</span>
+            </div>
+            <div class="flex flex-col items-center gap-1 text-slate-400">
+                <span class="material-symbols-outlined">person</span>
+                <span class="text-[10px] font-medium">Profile</span>
+            </div>
+        </nav>
+
+        <!-- Secondary FAB for Map Toggle -->
+        <button class="absolute bottom-24 right-4 size-14 rounded-full bg-primary text-white shadow-2xl shadow-primary/40 flex items-center justify-center z-10">
+            <span class="material-symbols-outlined" style="font-size: 28px;">near_me</span>
+        </button>
+    </div>
+
+    <!-- Background Decoration -->
+    <div class="fixed top-0 left-0 w-full h-full pointer-events-none opacity-20 dark:opacity-40 z-[-1]">
+        <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/20 rounded-full blur-[120px]"></div>
+    </div>
+</body>
+</html>

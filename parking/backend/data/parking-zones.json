@@ -1,0 +1,100 @@
+{
+  "zones": [
+    {
+      "id": "zone-1",
+      "name": "Center",
+      "neighborhood": "Center",
+      "coordinates": [
+        [42.6977, 23.3219],
+        [42.6977, 23.3319],
+        [42.7077, 23.3319],
+        [42.7077, 23.3219]
+      ],
+      "center": [42.7027, 23.3269],
+      "availability": "low",
+      "availabilityScore": 15,
+      "totalSpots": 200,
+      "occupiedSpots": 170,
+      "averageFindingTime": 18,
+      "peakHours": ["08:00-10:00", "17:00-19:00"],
+      "pricePerHour": 2.5
+    },
+    {
+      "id": "zone-2",
+      "name": "Lozenets",
+      "neighborhood": "Lozenets",
+      "coordinates": [
+        [42.6777, 23.3119],
+        [42.6777, 23.3319],
+        [42.6877, 23.3319],
+        [42.6877, 23.3119]
+      ],
+      "center": [42.6827, 23.3219],
+      "availability": "medium",
+      "availabilityScore": 55,
+      "totalSpots": 350,
+      "occupiedSpots": 158,
+      "averageFindingTime": 12,
+      "peakHours": ["12:00-14:00", "18:00-20:00"],
+      "pricePerHour": 2.0
+    },
+    {
+      "id": "zone-3",
+      "name": "Mladost",
+      "neighborhood": "Mladost",
+      "coordinates": [
+        [42.6477, 23.3619],
+        [42.6477, 23.3819],
+        [42.6577, 23.3819],
+        [42.6577, 23.3619]
+      ],
+      "center": [42.6527, 23.3719],
+      "availability": "high",
+      "availabilityScore": 85,
+      "totalSpots": 500,
+      "occupiedSpots": 75,
+      "averageFindingTime": 5,
+      "peakHours": ["08:00-09:00", "17:00-18:00"],
+      "pricePerHour": 1.5
+    },
+    {
+      "id": "zone-4",
+      "name": "Studentski Grad",
+      "neighborhood": "Studentski Grad",
+      "coordinates": [
+        [42.6477, 23.3119],
+        [42.6477, 23.3319],
+        [42.6577, 23.3319],
+        [42.6577, 23.3119]
+      ],
+      "center": [42.6527, 23.3219],
+      "availability": "medium",
+      "availabilityScore": 60,
+      "totalSpots": 400,
+      "occupiedSpots": 160,
+      "averageFindingTime": 10,
+      "peakHours": ["09:00-11:00", "14:00-16:00"],
+      "pricePerHour": 1.0
+    },
+    {
+      "id": "zone-5",
+      "name": "NDK Area",
+      "neighborhood": "Center",
+      "coordinates": [
+        [42.6827, 23.3169],
+        [42.6827, 23.3219],
+        [42.6877, 23.3219],
+        [42.6877, 23.3169]
+      ],
+      "center": [42.6852, 23.3194],
+      "availability": "low",
+      "availabilityScore": 20,
+      "totalSpots": 150,
+      "occupiedSpots": 120,
+      "averageFindingTime": 15,
+      "peakHours": ["18:00-23:00"],
+      "pricePerHour": 3.0,
+      "notes": "High demand during events at NDK"
+    }
+  ]
+}
