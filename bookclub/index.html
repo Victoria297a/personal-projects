@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bookclub Hub</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="assets/cover-styles.css" />
   </head>
   <body>
     <header class="site-header">
@@ -43,10 +44,21 @@
         </div>
         <div class="hero-card">
           <h3>Weekly Highlight</h3>
-          <p class="book-title">“The Midnight Library”</p>
-          <p>⭐ 4.7 • 2,314 ratings</p>
+          <div class="book-card">
+            <div class="cover">
+              <img src="https://covers.openlibrary.org/b/isbn/9780020246244-M.jpg" alt="The Midnight Library" />
+            </div>
+            <div class="book-meta">
+              <p class="book-title">“The Midnight Library”</p>
+              <p>by Matt Haig • ⭐ 4.7 • 2,314 ratings</p>
+              <p class="plot">
+                A woman finds herself between life and death in a library of alternate choices,
+                exploring the lives she could have lived.
+              </p>
+            </div>
+          </div>
           <div class="pill-row">
-            <span class="pill">Fantasy</span>
+            <span class="pill">Speculative</span>
             <span class="pill">Book of the Month</span>
             <span class="pill">Live discussion</span>
           </div>
@@ -77,6 +89,41 @@
         </article>
       </section>
 
+      <section class="grid two">
+        <article class="card">
+          <h3>Featured shelf</h3>
+          <div class="book-card">
+            <div class="cover">
+              <img src="https://covers.openlibrary.org/b/isbn/9780316769174-M.jpg" alt="Pachinko" />
+            </div>
+            <div class="book-meta">
+              <p class="book-title">“Pachinko”</p>
+              <p class="muted">Historical fiction • 4.6 rating</p>
+              <p class="plot">
+                A sweeping family saga following four generations of a Korean family living in
+                Japan, exploring identity and survival.
+              </p>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Staff pick</h3>
+          <div class="book-card">
+            <div class="cover">
+              <img src="https://covers.openlibrary.org/b/isbn/9780143034902-M.jpg" alt="The Shadow of the Wind" />
+            </div>
+            <div class="book-meta">
+              <p class="book-title">“The Shadow of the Wind”</p>
+              <p class="muted">Gothic mystery • 4.5 rating</p>
+              <p class="plot">
+                A hidden book leads a young reader into a web of secrets across post-war
+                Barcelona.
+              </p>
+            </div>
+          </div>
+        </article>
+      </section>
+
       <section class="split">
         <div class="panel">
           <h3>Upcoming Events</h3>
@@ -101,6 +148,7 @@
       <p>Bookclub Hub © 2026 • Built for local readers</p>
     </footer>
 
+    <script src="assets/book-loader.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

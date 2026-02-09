@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Marketplace • Bookclub Hub</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="assets/cover-styles.css" />
   </head>
   <body>
     <header class="site-header compact">
@@ -40,8 +41,18 @@
       <section class="grid three">
         <article class="card listing">
           <div class="listing-tag">For sale</div>
-          <h3>The Song of Achilles</h3>
-          <p class="muted">Paperback • Like new</p>
+          <div class="book-card">
+            <div class="cover">
+              <img src="https://covers.openlibrary.org/b/isbn/9780062060623-M.jpg" alt="The Song of Achilles" />
+            </div>
+            <div class="book-meta">
+              <h3>The Song of Achilles</h3>
+              <p class="muted">Paperback • Like new</p>
+              <p class="plot">
+                A lyrical retelling of the Iliad through the bond between Achilles and Patroclus.
+              </p>
+            </div>
+          </div>
           <p class="price">€8</p>
           <div class="pill-row">
             <span class="pill">Pickup: Sofia Center</span>
@@ -52,8 +63,18 @@
 
         <article class="card listing">
           <div class="listing-tag swap">Swap</div>
-          <h3>Atomic Habits</h3>
-          <p class="muted">Hardcover • Great condition</p>
+          <div class="book-card">
+            <div class="cover">
+              <img src="https://covers.openlibrary.org/b/isbn/9780735211292-M.jpg" alt="Atomic Habits" />
+            </div>
+            <div class="book-meta">
+              <h3>Atomic Habits</h3>
+              <p class="muted">Hardcover • Great condition</p>
+              <p class="plot">
+                Practical strategies for building good habits and breaking the bad ones.
+              </p>
+            </div>
+          </div>
           <p class="price">Swap for: non-fiction</p>
           <div class="pill-row">
             <span class="pill">Open to offers</span>
@@ -64,8 +85,18 @@
 
         <article class="card listing">
           <div class="listing-tag">For sale</div>
-          <h3>Norwegian Wood</h3>
-          <p class="muted">Paperback • Good condition</p>
+          <div class="book-card">
+            <div class="cover">
+              <img src="https://covers.openlibrary.org/b/isbn/9780099457305-M.jpg" alt="Norwegian Wood" />
+            </div>
+            <div class="book-meta">
+              <h3>Norwegian Wood</h3>
+              <p class="muted">Paperback • Good condition</p>
+              <p class="plot">
+                A tender coming-of-age story set against the backdrop of 1960s Tokyo.
+              </p>
+            </div>
+          </div>
           <p class="price">€5</p>
           <div class="pill-row">
             <span class="pill">Ship or pickup</span>
@@ -131,6 +162,7 @@
       <p>Bookclub Hub © 2026 • Marketplace</p>
     </footer>
 
+    <script src="assets/book-loader.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

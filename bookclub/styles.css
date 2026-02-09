@@ -1,15 +1,15 @@
 :root {
   color-scheme: light;
-  --bg: #f7f5f2;
-  --surface: #ffffff;
-  --text: #1d1b1f;
-  --muted: #6e6576;
-  --primary: #6941c6;
-  --primary-strong: #4f2ca1;
-  --accent: #f4b740;
-  --border: #e3deeb;
-  --shadow: 0 20px 60px rgba(41, 24, 74, 0.08);
-  --radius: 20px;
+  --bg: #f6f2ea;
+  --surface: #fffdf8;
+  --text: #2b241d;
+  --muted: #7a6f63;
+  --primary: #8b5e34;
+  --primary-strong: #6e4524;
+  --accent: #c7a27c;
+  --border: #e6dccf;
+  --shadow: 0 18px 40px rgba(65, 44, 26, 0.08);
+  --radius: 18px;
 }
 
 * {
@@ -18,10 +18,10 @@
 
 body {
   margin: 0;
-  font-family: "Inter", "Segoe UI", sans-serif;
+  font-family: "Source Serif 4", "Georgia", "Times New Roman", serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 a {
@@ -57,7 +57,7 @@ a {
   display: grid;
   place-items: center;
   border-radius: 16px;
-  background: linear-gradient(135deg, #ede4ff, #f7f1ff);
+  background: linear-gradient(135deg, #f5e7d7, #fff8f0);
   font-size: 26px;
 }
 
@@ -102,19 +102,19 @@ a {
   padding: 10px 14px;
   border-radius: 999px;
   border: 1px solid var(--border);
-  background: #faf9fc;
+  background: #fbf8f3;
 }
 
 .primary,
 button.primary {
   border: none;
   background: var(--primary);
-  color: white;
+  color: #fffdf8;
   padding: 10px 18px;
   border-radius: 999px;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 12px 24px rgba(79, 44, 161, 0.25);
+  box-shadow: 0 12px 24px rgba(110, 69, 36, 0.22);
 }
 
 .ghost,
@@ -165,8 +165,8 @@ button.ghost {
 }
 
 .pill {
-  background: #f1ecfb;
-  color: #5332a5;
+  background: #f3eadf;
+  color: #6e4524;
   padding: 6px 12px;
   border-radius: 999px;
   font-size: 12px;
@@ -209,7 +209,7 @@ button.ghost {
 }
 
 .panel {
-  background: #fdfcff;
+  background: #fffaf4;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 24px;
@@ -252,7 +252,7 @@ button.ghost {
   padding: 10px 12px;
   border-radius: 12px;
   border: 1px solid var(--border);
-  background: #faf9fc;
+  background: #fbf8f3;
   font: inherit;
 }
 
@@ -265,14 +265,14 @@ button.ghost {
 }
 
 .ratings-list li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 12px;
+  align-items: start;
 }
 
 .stars {
-  color: #f4b740;
+  color: #c49a3a;
   font-size: 18px;
   letter-spacing: 2px;
 }
@@ -287,7 +287,7 @@ button.ghost {
   border: none;
   background: transparent;
   cursor: pointer;
-  color: #d4c3ed;
+  color: #d8c6b0;
 }
 
 .star.active {
@@ -334,7 +334,7 @@ button.ghost {
 
 .post-actions button {
   border: none;
-  background: #f3effc;
+  background: #f3eadf;
   padding: 6px 12px;
   border-radius: 999px;
   cursor: pointer;
@@ -345,11 +345,11 @@ button.ghost {
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  background: #e9e2f6;
+  background: #efe3d4;
   display: grid;
   place-items: center;
   font-weight: 700;
-  color: #5b3eb1;
+  color: #6e4524;
 }
 
 .avatar.large {
@@ -396,7 +396,7 @@ button.ghost {
 }
 
 .progress {
-  background: #efe9fb;
+  background: #efe3d4;
   border-radius: 999px;
   height: 10px;
   overflow: hidden;
@@ -404,7 +404,7 @@ button.ghost {
 
 .progress-bar {
   height: 100%;
-  background: linear-gradient(90deg, #7b54d6, #f4b740);
+  background: linear-gradient(90deg, #8b5e34, #c7a27c);
 }
 
 .listing {
@@ -415,8 +415,8 @@ button.ghost {
   position: absolute;
   top: 16px;
   right: 16px;
-  background: #eaf7f0;
-  color: #1b7f57;
+  background: #f1efe9;
+  color: #5e4a35;
   padding: 4px 10px;
   border-radius: 999px;
   font-size: 12px;
@@ -424,8 +424,8 @@ button.ghost {
 }
 
 .listing-tag.swap {
-  background: #fff0d6;
-  color: #b76b08;
+  background: #f8ead4;
+  color: #a1651f;
 }
 
 .price {
@@ -435,7 +435,7 @@ button.ghost {
 
 .callout {
   margin-top: 16px;
-  background: #f4f0ff;
+  background: #f6efe4;
   border-radius: 16px;
   padding: 16px;
 }
@@ -448,7 +448,7 @@ button.ghost {
 
 .chip {
   border: 1px solid var(--border);
-  background: #fff;
+  background: #fffdf8;
   padding: 8px 14px;
   border-radius: 999px;
   font-weight: 600;
@@ -467,6 +467,47 @@ button.ghost {
 
 .book-title {
   font-weight: 700;
+}
+
+.book-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: center;
+}
+
+.book-card + .book-card {
+  margin-top: 16px;
+}
+
+.cover {
+  width: 86px;
+  height: 120px;
+  border-radius: 12px;
+  background: linear-gradient(160deg, #e9dccd, #f7efe5);
+  border: 1px solid var(--border);
+  display: grid;
+  padding: 10px;
+  font-weight: 700;
+  font-size: 12px;
+  color: #5e4a35;
+  box-shadow: inset 0 0 0 1px rgba(124, 92, 64, 0.1);
+}
+
+.cover span {
+  font-weight: 600;
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.book-meta {
+  display: grid;
+  gap: 6px;
+}
+
+.book-meta .plot {
+  color: var(--muted);
+  font-size: 14px;
 }
 
 @media (max-width: 960px) {

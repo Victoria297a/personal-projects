@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Community • Bookclub Hub</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="assets/cover-styles.css" />
   </head>
   <body>
     <header class="site-header compact">
@@ -44,31 +45,46 @@
             <span class="pill">1,204 ratings</span>
           </div>
           <ul class="ratings-list">
-            <li>
-              <div>
+            <li class="book-card">
+              <div class="cover">
+                <img src="https://covers.openlibrary.org/b/isbn/9780385534630-M.jpg" alt="The Night Circus" />
+              </div>
+              <div class="book-meta">
                 <p class="book-title">The Night Circus</p>
                 <p class="muted">Fantasy • 5,231 reviews</p>
-              </div>
-              <div class="stars" aria-label="5 out of 5">
-                ★★★★★
+                <p class="plot">
+                  Two magicians bound in a lifelong competition build a dreamlike circus that
+                  captivates a city.
+                </p>
+                <div class="stars" aria-label="5 out of 5">★★★★★</div>
               </div>
             </li>
-            <li>
-              <div>
+            <li class="book-card">
+              <div class="cover">
+                <img src="https://covers.openlibrary.org/b/isbn/9780593135204-M.jpg" alt="Project Hail Mary" />
+              </div>
+              <div class="book-meta">
                 <p class="book-title">Project Hail Mary</p>
                 <p class="muted">Sci-Fi • 4,118 reviews</p>
-              </div>
-              <div class="stars" aria-label="4.8 out of 5">
-                ★★★★☆
+                <p class="plot">
+                  A lone astronaut wakes up light-years from Earth with one mission: save
+                  humanity.
+                </p>
+                <div class="stars" aria-label="4.8 out of 5">★★★★☆</div>
               </div>
             </li>
-            <li>
-              <div>
+            <li class="book-card">
+              <div class="cover">
+                <img src="https://covers.openlibrary.org/b/isbn/9781984822368-M.jpg" alt="The Vanishing Half" />
+              </div>
+              <div class="book-meta">
                 <p class="book-title">The Vanishing Half</p>
                 <p class="muted">Literary • 3,909 reviews</p>
-              </div>
-              <div class="stars" aria-label="4.7 out of 5">
-                ★★★★☆
+                <p class="plot">
+                  Twin sisters choose different paths that ripple through generations of their
+                  family.
+                </p>
+                <div class="stars" aria-label="4.7 out of 5">★★★★☆</div>
               </div>
             </li>
           </ul>
@@ -146,6 +162,7 @@
       <p>Bookclub Hub © 2026 • Community</p>
     </footer>
 
+    <script src="assets/book-loader.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

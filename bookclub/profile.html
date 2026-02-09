@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Profile • Bookclub Hub</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="assets/cover-styles.css" />
   </head>
   <body>
     <header class="site-header compact">
@@ -97,19 +98,55 @@
       <section class="grid two">
         <article class="card">
           <h3>Currently reading</h3>
-          <ul class="list">
-            <li>“The Paris Library” — 35% completed</li>
-            <li>“The Invisible Life of Addie LaRue” — 62% completed</li>
-            <li>“Pachinko” — 12% completed</li>
-          </ul>
+          <div class="book-card">
+            <div class="cover">
+              <img src="https://covers.openlibrary.org/b/isbn/9780062409669-M.jpg" alt="The Paris Library" />
+            </div>
+            <div class="book-meta">
+              <p class="book-title">The Paris Library</p>
+              <p class="muted">35% completed</p>
+              <p class="plot">
+                A librarian’s story of resistance and friendship in Paris during World War II.
+              </p>
+            </div>
+          </div>
+          <div class="book-card">
+            <div class="cover">
+              <img src="https://covers.openlibrary.org/b/isbn/9780765387516-M.jpg" alt="The Invisible Life of Addie LaRue" />
+            </div>
+            <div class="book-meta">
+              <p class="book-title">The Invisible Life of Addie LaRue</p>
+              <p class="muted">62% completed</p>
+              <p class="plot">
+                A woman cursed to be forgotten finds a chance at love and remembrance.
+              </p>
+            </div>
+          </div>
         </article>
         <article class="card">
           <h3>Wishlist</h3>
-          <ul class="list">
-            <li>“Tomorrow, and Tomorrow, and Tomorrow”</li>
-            <li>“The House in the Cerulean Sea”</li>
-            <li>“Station Eleven”</li>
-          </ul>
+          <div class="book-card">
+            <div class="cover">
+              <img src="https://covers.openlibrary.org/b/isbn/9780553448429-M.jpg" alt="Tomorrow, and Tomorrow, and Tomorrow" />
+            </div>
+            <div class="book-meta">
+              <p class="book-title">Tomorrow, and Tomorrow, and Tomorrow</p>
+              <p class="plot">
+                Two friends build a creative partnership while designing games and a life together.
+              </p>
+            </div>
+          </div>
+          <div class="book-card">
+            <div class="cover">
+              <img src="https://covers.openlibrary.org/b/isbn/9780356508115-M.jpg" alt="The House in the Cerulean Sea" />
+            </div>
+            <div class="book-meta">
+              <p class="book-title">The House in the Cerulean Sea</p>
+              <p class="plot">
+                A caseworker discovers a magical orphanage and a new way of belonging.
+              </p>
+            </div>
+          </div>
         </article>
       </section>
     </main>
@@ -118,6 +155,7 @@
       <p>Bookclub Hub © 2026 • Profile</p>
     </footer>
 
+    <script src="assets/book-loader.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

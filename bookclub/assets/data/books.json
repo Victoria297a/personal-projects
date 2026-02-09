@@ -1,0 +1,145 @@
+[
+  {
+    "id": 1,
+    "title": "The Midnight Library",
+    "author": "Matt Haig",
+    "isbn": "9780020246244",
+    "plot": "A woman finds herself between life and death in a library of alternate choices, exploring the lives she could have lived.",
+    "genre": "Speculative Fiction",
+    "rating": 4.7,
+    "ratingCount": 2314,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780020246244-M.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Pachinko",
+    "author": "Min Jin Lee",
+    "isbn": "9780316769174",
+    "plot": "A sweeping family saga following four generations of a Korean family living in Japan, exploring identity and survival.",
+    "genre": "Historical Fiction",
+    "rating": 4.6,
+    "ratingCount": 1890,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780316769174-M.jpg"
+  },
+  {
+    "id": 3,
+    "title": "The Shadow of the Wind",
+    "author": "Carlos Ruiz Zafón",
+    "isbn": "9780143034902",
+    "plot": "A hidden book leads a young reader into a web of secrets across post-war Barcelona.",
+    "genre": "Gothic Mystery",
+    "rating": 4.5,
+    "ratingCount": 2156,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780143034902-M.jpg"
+  },
+  {
+    "id": 4,
+    "title": "The Night Circus",
+    "author": "Erin Morgenstern",
+    "isbn": "9780385534630",
+    "plot": "Two magicians bound in a lifelong competition build a dreamlike circus that captivates a city.",
+    "genre": "Fantasy",
+    "rating": 5.0,
+    "ratingCount": 5231,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780385534630-M.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Project Hail Mary",
+    "author": "Andy Weir",
+    "isbn": "9780593135204",
+    "plot": "A lone astronaut wakes up light-years from Earth with one mission: save humanity.",
+    "genre": "Science Fiction",
+    "rating": 4.8,
+    "ratingCount": 4118,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780593135204-M.jpg"
+  },
+  {
+    "id": 6,
+    "title": "The Vanishing Half",
+    "author": "Brit Bennett",
+    "isbn": "9781984822368",
+    "plot": "Twin sisters choose different paths that ripple through generations of their family.",
+    "genre": "Literary Fiction",
+    "rating": 4.7,
+    "ratingCount": 3909,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781984822368-M.jpg"
+  },
+  {
+    "id": 7,
+    "title": "The Song of Achilles",
+    "author": "Madeline Miller",
+    "isbn": "9780062060623",
+    "plot": "A lyrical retelling of the Iliad through the bond between Achilles and Patroclus.",
+    "genre": "Historical Fantasy",
+    "rating": 4.6,
+    "ratingCount": 2842,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780062060623-M.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "isbn": "9780735211292",
+    "plot": "Practical strategies for building good habits and breaking the bad ones.",
+    "genre": "Self-Help",
+    "rating": 4.7,
+    "ratingCount": 3256,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780735211292-M.jpg"
+  },
+  {
+    "id": 9,
+    "title": "Norwegian Wood",
+    "author": "Haruki Murakami",
+    "isbn": "9780099457305",
+    "plot": "A tender coming-of-age story set against the backdrop of 1960s Tokyo.",
+    "genre": "Literary Fiction",
+    "rating": 4.4,
+    "ratingCount": 2105,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780099457305-M.jpg"
+  },
+  {
+    "id": 10,
+    "title": "The Paris Library",
+    "author": "Janet Skeslien Charles",
+    "isbn": "9780062409669",
+    "plot": "A librarian's story of resistance and friendship in Paris during World War II.",
+    "genre": "Historical Fiction",
+    "rating": 4.5,
+    "ratingCount": 1943,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780062409669-M.jpg"
+  },
+  {
+    "id": 11,
+    "title": "The Invisible Life of Addie LaRue",
+    "author": "V.E. Schwab",
+    "isbn": "9780765387516",
+    "plot": "A woman cursed to be forgotten finds a chance at love and remembrance.",
+    "genre": "Historical Fantasy",
+    "rating": 4.6,
+    "ratingCount": 2987,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780765387516-M.jpg"
+  },
+  {
+    "id": 12,
+    "title": "Tomorrow, and Tomorrow, and Tomorrow",
+    "author": "Gabrielle Zevin",
+    "isbn": "9780553448429",
+    "plot": "Two friends build a creative partnership while designing games and a life together.",
+    "genre": "Literary Fiction",
+    "rating": 4.5,
+    "ratingCount": 1876,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780553448429-M.jpg"
+  },
+  {
+    "id": 13,
+    "title": "The House in the Cerulean Sea",
+    "author": "T.J. Klune",
+    "isbn": "9780356508115",
+    "plot": "A caseworker discovers a magical orphanage and a new way of belonging.",
+    "genre": "Fantasy",
+    "rating": 4.7,
+    "ratingCount": 2654,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780356508115-M.jpg"
+  }
+]
