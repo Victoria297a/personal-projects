@@ -1,5 +1,15 @@
 // API Base URL
 const API_URL = "http://localhost:5000/api";
+const TOKEN_KEY = "auth_token";
+
+function getToken() {
+  return localStorage.getItem(TOKEN_KEY);
+}
+
+function getAuthHeaders() {
+  const token = getToken();
+  return token ? { Authorization: `Bearer ${token}` } : {};
+}
 
 // Category icons and colors
 const categoryConfig = {
@@ -53,19 +63,29 @@ async function addExpense(e) {
   };
 
   try {
-    // For now, store locally. Connect to backend API when ready
-    const response = await fetch(`${API_URL}/expenses`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newExpense),
-    }).catch(() => {
-      // Fallback to local storage if API not available
-      return null;
-    });
+    const token = getToken();
 
-    // Add to local array
-    newExpense.id = Date.now();
-    expenses.push(newExpense);
+    if (token) {
+      const response = await fetch(`${API_URL}/expenses`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          ...getAuthHeaders(),
+        },
+        body: JSON.stringify(newExpense),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to save to API");
+      }
+
+      const saved = await response.json();
+      expenses.push(saved);
+    } else {
+      // Fallback to local storage when not logged in
+      newExpense.id = Date.now();
+      expenses.push(newExpense);
+    }
 
     // Reset form
     document.getElementById("expense-form").reset();
@@ -82,12 +102,19 @@ async function addExpense(e) {
 // Load Expenses
 async function loadExpenses() {
   try {
-    const response = await fetch(`${API_URL}/expenses`).catch(() => null);
+    const token = getToken();
 
-    if (response && response.ok) {
-      expenses = await response.json();
+    if (token) {
+      const response = await fetch(`${API_URL}/expenses`, {
+        headers: { ...getAuthHeaders() },
+      });
+
+      if (response.ok) {
+        expenses = await response.json();
+      } else {
+        expenses = [];
+      }
     } else {
-      // Load from localStorage as fallback
       const stored = localStorage.getItem("expenses");
       expenses = stored ? JSON.parse(stored) : [];
     }
@@ -100,8 +127,9 @@ async function loadExpenses() {
 
 // Update UI
 function updateUI() {
-  // Save to localStorage
-  localStorage.setItem("expenses", JSON.stringify(expenses));
+  if (!getToken()) {
+    localStorage.setItem("expenses", JSON.stringify(expenses));
+  }
 
   updateStats();
   updateChart();
@@ -259,6 +287,7 @@ function renderExpenses(items = expenses) {
 
   sorted.forEach((expense) => {
     const icon = categoryConfig[expense.category]?.icon || "💰";
+    const expenseId = expense._id || expense.id;
     const date = new Date(expense.date).toLocaleDateString("en-US", {
       month: "short",
       day: "numeric",
@@ -279,7 +308,7 @@ function renderExpenses(items = expenses) {
         <div class="expense-date">${date}</div>
       </div>
       <div class="expense-actions">
-        <button class="btn-delete" onclick="deleteExpense(${expense.id})">Delete</button>
+        <button class="btn-delete" onclick="deleteExpense('${expenseId}')">Delete</button>
       </div>
     `;
     container.appendChild(item);
@@ -289,7 +318,25 @@ function renderExpenses(items = expenses) {
 // Delete Expense
 function deleteExpense(id) {
   if (confirm("Are you sure you want to delete this expense?")) {
-    expenses = expenses.filter((e) => e.id !== id);
+    const token = getToken();
+    const match = expenses.find((e) => (e._id || e.id) === id);
+
+    if (token && match?._id) {
+      fetch(`${API_URL}/expenses/${match._id}`, {
+        method: "DELETE",
+        headers: { ...getAuthHeaders() },
+      })
+        .then(() => {
+          expenses = expenses.filter((e) => (e._id || e.id) !== id);
+          updateUI();
+        })
+        .catch(() => {
+          alert("Failed to delete expense");
+        });
+      return;
+    }
+
+    expenses = expenses.filter((e) => (e._id || e.id) !== id);
     updateUI();
   }
 }

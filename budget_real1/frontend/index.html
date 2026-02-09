@@ -12,6 +12,13 @@
       <header class="header">
         <h1>Budget Tracker</h1>
         <p class="subtitle">Track your expenses and visualize spending</p>
+        <nav class="header-nav">
+          <a class="active" href="index.html">Dashboard</a>
+          <a href="profile.html">Profile</a>
+          <a href="login.html" data-auth="logged-out">Log in</a>
+          <a href="signup.html" data-auth="logged-out">Sign up</a>
+          <a href="#" id="logout-link" data-auth="logged-in">Log out</a>
+        </nav>
       </header>
 
       <div class="main-content">
@@ -109,6 +116,7 @@
       </div>
     </div>
 
+    <script src="auth.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

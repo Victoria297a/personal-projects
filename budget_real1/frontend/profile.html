@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile • Budget Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="profile.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>Budget Tracker</h1>
+        <p class="subtitle">Manage your account and privacy settings</p>
+        <nav class="header-nav">
+          <a href="index.html">Dashboard</a>
+          <a class="active" href="profile.html">Profile</a>
+          <a href="login.html" data-auth="logged-out">Log in</a>
+          <a href="signup.html" data-auth="logged-out">Sign up</a>
+          <a href="#" id="logout-link" data-auth="logged-in">Log out</a>
+        </nav>
+      </header>
+    </div>
+
+    <main class="profile-container">
+      <div class="profile-grid">
+        <section class="profile-card">
+          <h2>Profile settings</h2>
+          <form id="profile-form">
+            <div class="profile-row">
+              <label for="profile-name">Full name</label>
+              <input id="profile-name" type="text" value="Vicky Petrova" />
+            </div>
+            <div class="profile-row">
+              <label for="profile-email">Email</label>
+              <input id="profile-email" type="email" value="vicky@example.com" />
+            </div>
+            <div class="profile-row">
+              <label for="profile-currency">Preferred currency</label>
+              <select id="profile-currency">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="BGN" selected>BGN</option>
+              </select>
+            </div>
+            <div class="profile-row">
+              <label for="profile-budget">Monthly budget</label>
+              <input id="profile-budget" type="number" value="3000" />
+            </div>
+            <div class="profile-actions">
+              <button class="btn-primary" type="submit">Save changes</button>
+              <button class="btn-secondary" type="button">Cancel</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="profile-card">
+          <h2>Security</h2>
+          <form id="password-form">
+            <div class="profile-row">
+              <label for="current-password">Current password</label>
+              <input id="current-password" type="password" placeholder="••••••••" />
+            </div>
+            <div class="profile-row">
+              <label for="new-password">New password</label>
+              <input id="new-password" type="password" placeholder="Create a new password" />
+            </div>
+            <div class="profile-row">
+              <label for="confirm-password">Confirm password</label>
+              <input id="confirm-password" type="password" placeholder="Repeat new password" />
+            </div>
+            <div class="profile-actions">
+              <button class="btn-primary" type="submit">Update password</button>
+              <button class="btn-secondary" type="button">Enable 2FA</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="profile-card">
+          <h2>Notifications</h2>
+          <div class="preference-grid">
+            <label class="preference-item">
+              Email receipts
+              <input type="checkbox" checked />
+            </label>
+            <label class="preference-item">
+              Weekly summary
+              <input type="checkbox" checked />
+            </label>
+            <label class="preference-item">
+              Budget alerts
+              <input type="checkbox" />
+            </label>
+            <label class="preference-item">
+              Subscription reminders
+              <input type="checkbox" checked />
+            </label>
+          </div>
+        </section>
+
+        <section class="profile-card">
+          <h2>Data & privacy</h2>
+          <div class="profile-row">
+            <label for="data-export">Export data</label>
+            <select id="data-export">
+              <option>CSV</option>
+              <option>PDF</option>
+              <option>JSON</option>
+            </select>
+          </div>
+          <div class="profile-row">
+            <label for="delete-account">Delete account</label>
+            <textarea id="delete-account" rows="3" placeholder="Tell us why you are leaving"></textarea>
+          </div>
+          <div class="profile-actions">
+            <button class="btn-secondary">Export</button>
+            <button class="btn-primary">Delete account</button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="auth.js"></script>
+  </body>
+</html>

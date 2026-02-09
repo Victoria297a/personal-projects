@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up • Budget Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="auth.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>Budget Tracker</h1>
+        <p class="subtitle">Create a secure account to protect your data</p>
+        <nav class="header-nav">
+          <a href="index.html">Dashboard</a>
+          <a href="profile.html">Profile</a>
+          <a href="login.html" data-auth="logged-out">Log in</a>
+          <a class="active" href="signup.html" data-auth="logged-out">Sign up</a>
+          <a href="#" id="logout-link" data-auth="logged-in">Log out</a>
+        </nav>
+      </header>
+    </div>
+
+    <main class="auth-container">
+      <section class="auth-card">
+        <h2 class="auth-title">Create your account</h2>
+        <p class="auth-subtitle">Your finances stay private and encrypted.</p>
+
+        <form class="auth-form" id="signup-form">
+          <div class="auth-row">
+            <label for="signup-name">Full name</label>
+            <input id="signup-name" type="text" placeholder="Vicky Petrova" required />
+          </div>
+
+          <div class="auth-row">
+            <label for="signup-email">Email</label>
+            <input id="signup-email" type="email" placeholder="you@example.com" required />
+          </div>
+
+          <div class="auth-row">
+            <label for="signup-password">Password</label>
+            <input id="signup-password" type="password" placeholder="Create a password" required />
+            <span class="helper-text">At least 8 characters, mix letters and numbers.</span>
+          </div>
+
+          <div class="auth-row">
+            <label for="signup-currency">Default currency</label>
+            <select id="signup-currency" required>
+              <option value="USD">USD</option>
+              <option value="EUR">EUR</option>
+              <option value="GBP">GBP</option>
+              <option value="BGN">BGN</option>
+            </select>
+          </div>
+
+          <div class="auth-actions">
+            <button class="btn-primary" type="submit">Create account</button>
+            <button class="btn-secondary" type="button">Continue with Google</button>
+          </div>
+        </form>
+
+        <div class="auth-footer">
+          Already have an account? <a href="login.html">Log in</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="auth.js"></script>
+  </body>
+</html>
