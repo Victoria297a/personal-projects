@@ -61,7 +61,7 @@ async function handleLogin(form) {
       }
 
       setSession(data.token, data.user);
-      window.location.href = "index.html";
+      window.location.href = "dashboard.html";
     } catch (error) {
       alert("Login failed. Check server connection.");
     }
@@ -90,7 +90,7 @@ async function handleSignup(form) {
       }
 
       setSession(data.token, data.user);
-      window.location.href = "profile.html";
+      window.location.href = "dashboard.html";
     } catch (error) {
       alert("Sign up failed. Check server connection.");
     }
@@ -194,6 +194,13 @@ async function handlePasswordUpdate(form) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Auth guard for profile page
+  const profileForm = document.getElementById("profile-form");
+  if (profileForm && !getToken()) {
+    window.location.href = "login.html";
+    return;
+  }
+
   updateNavAuth();
   handleLogout();
 
@@ -207,7 +214,6 @@ document.addEventListener("DOMContentLoaded", () => {
     handleSignup(signupForm);
   }
 
-  const profileForm = document.getElementById("profile-form");
   if (profileForm) {
     loadProfile();
     handleProfileUpdate(profileForm);

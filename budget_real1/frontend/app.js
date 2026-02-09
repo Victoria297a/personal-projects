@@ -27,6 +27,11 @@ const categoryConfig = {
 let expenses = [];
 let chart = null;
 
+// Auth guard: redirect to login if not authenticated
+if (!getToken()) {
+  window.location.href = "login.html";
+}
+
 // Set today's date as default
 document.getElementById("date").valueAsDate = new Date();
 
