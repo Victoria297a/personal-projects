@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community • Bookclub Hub</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header compact">
+      <div class="brand">
+        <div class="logo">📚</div>
+        <div>
+          <h1>Bookclub Hub</h1>
+          <p class="tagline">Community</p>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a class="active" href="community.html">Community</a>
+        <a href="friends.html">Friends</a>
+        <a href="profile.html">My Profile</a>
+        <a href="market.html">Marketplace</a>
+      </nav>
+      <div class="search">
+        <input id="community-search" type="search" placeholder="Search discussions or books" />
+        <button class="primary">Search</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="page-header">
+        <div>
+          <h2>Community ratings & discussions</h2>
+          <p>Rate books with a 5-star system, share posts, and discover trending reads.</p>
+        </div>
+        <button class="primary">Create a post</button>
+      </section>
+
+      <section class="grid two">
+        <article class="card">
+          <div class="card-header">
+            <h3>Top Rated This Week</h3>
+            <span class="pill">1,204 ratings</span>
+          </div>
+          <ul class="ratings-list">
+            <li>
+              <div>
+                <p class="book-title">The Night Circus</p>
+                <p class="muted">Fantasy • 5,231 reviews</p>
+              </div>
+              <div class="stars" aria-label="5 out of 5">
+                ★★★★★
+              </div>
+            </li>
+            <li>
+              <div>
+                <p class="book-title">Project Hail Mary</p>
+                <p class="muted">Sci-Fi • 4,118 reviews</p>
+              </div>
+              <div class="stars" aria-label="4.8 out of 5">
+                ★★★★☆
+              </div>
+            </li>
+            <li>
+              <div>
+                <p class="book-title">The Vanishing Half</p>
+                <p class="muted">Literary • 3,909 reviews</p>
+              </div>
+              <div class="stars" aria-label="4.7 out of 5">
+                ★★★★☆
+              </div>
+            </li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <h3>Quick Rate</h3>
+            <span class="pill">5-star system</span>
+          </div>
+          <form class="form">
+            <label>
+              Book title
+              <input type="text" placeholder="Enter book title" />
+            </label>
+            <label>
+              Your rating
+              <div class="stars interactive">
+                <button type="button" class="star" data-value="1">★</button>
+                <button type="button" class="star" data-value="2">★</button>
+                <button type="button" class="star" data-value="3">★</button>
+                <button type="button" class="star" data-value="4">★</button>
+                <button type="button" class="star" data-value="5">★</button>
+              </div>
+              <input type="hidden" name="rating" value="0" />
+            </label>
+            <label>
+              Quick thoughts
+              <textarea rows="3" placeholder="Share your opinion"></textarea>
+            </label>
+            <button class="primary" type="submit">Post rating</button>
+          </form>
+        </article>
+      </section>
+
+      <section class="posts">
+        <h3>Recent posts</h3>
+        <div class="post">
+          <div class="avatar">AL</div>
+          <div>
+            <div class="post-meta">
+              <span class="name">Alicia L.</span>
+              <span class="muted">2 hours ago</span>
+            </div>
+            <p class="post-title">Finished “Circe” and can’t stop thinking about the ending.</p>
+            <p>Beautiful prose, and the pacing worked for me. Anyone else felt the last chapter linger?</p>
+            <div class="post-actions">
+              <span>⭐ 5</span>
+              <button>Reply</button>
+              <button>Save</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="post">
+          <div class="avatar">MK</div>
+          <div>
+            <div class="post-meta">
+              <span class="name">Marcus K.</span>
+              <span class="muted">Yesterday</span>
+            </div>
+            <p class="post-title">Mystery lovers: try “The Guest List.”</p>
+            <p>Twists were great, but the character perspectives really sold it for me.</p>
+            <div class="post-actions">
+              <span>⭐ 4</span>
+              <button>Reply</button>
+              <button>Save</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Bookclub Hub © 2026 • Community</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

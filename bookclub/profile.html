@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profile • Bookclub Hub</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header compact">
+      <div class="brand">
+        <div class="logo">📚</div>
+        <div>
+          <h1>Bookclub Hub</h1>
+          <p class="tagline">My Profile</p>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="community.html">Community</a>
+        <a href="friends.html">Friends</a>
+        <a class="active" href="profile.html">My Profile</a>
+        <a href="market.html">Marketplace</a>
+      </nav>
+      <div class="search">
+        <input type="search" placeholder="Search my shelves" />
+        <button class="primary">Search</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="page-header">
+        <div>
+          <h2>Welcome back, Vicky</h2>
+          <p>Track your progress, update your profile, and manage your reading challenges.</p>
+        </div>
+        <button class="primary">Edit profile</button>
+      </section>
+
+      <section class="profile-grid">
+        <article class="card profile-card">
+          <div class="profile-hero">
+            <div class="avatar large">VP</div>
+            <div>
+              <h3>Vicky P.</h3>
+              <p class="muted">Reader since 2016 • Sofia, BG</p>
+              <div class="pill-row">
+                <span class="pill">Mystery</span>
+                <span class="pill">Historical</span>
+                <span class="pill">Poetry</span>
+              </div>
+            </div>
+          </div>
+          <div class="stats">
+            <div>
+              <h4>Books read</h4>
+              <p class="stat">28</p>
+            </div>
+            <div>
+              <h4>Challenge goal</h4>
+              <p class="stat">40</p>
+            </div>
+            <div>
+              <h4>Friends</h4>
+              <p class="stat">12</p>
+            </div>
+          </div>
+          <div class="progress">
+            <div class="progress-bar" style="width: 70%"></div>
+          </div>
+          <p class="muted">70% of your yearly goal completed</p>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <h3>Reading Challenge</h3>
+            <span class="pill">2026</span>
+          </div>
+          <form class="form">
+            <label>
+              Target number of books
+              <input type="number" value="40" min="1" />
+            </label>
+            <label>
+              Current count
+              <input type="number" value="28" min="0" />
+            </label>
+            <label>
+              Motivational note
+              <textarea rows="3" placeholder="What keeps you reading?">Read every day after dinner.</textarea>
+            </label>
+            <button class="primary" type="submit">Update challenge</button>
+          </form>
+        </article>
+      </section>
+
+      <section class="grid two">
+        <article class="card">
+          <h3>Currently reading</h3>
+          <ul class="list">
+            <li>“The Paris Library” — 35% completed</li>
+            <li>“The Invisible Life of Addie LaRue” — 62% completed</li>
+            <li>“Pachinko” — 12% completed</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Wishlist</h3>
+          <ul class="list">
+            <li>“Tomorrow, and Tomorrow, and Tomorrow”</li>
+            <li>“The House in the Cerulean Sea”</li>
+            <li>“Station Eleven”</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Bookclub Hub © 2026 • Profile</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

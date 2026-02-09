@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Friends • Bookclub Hub</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header compact">
+      <div class="brand">
+        <div class="logo">📚</div>
+        <div>
+          <h1>Bookclub Hub</h1>
+          <p class="tagline">Friends</p>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="community.html">Community</a>
+        <a class="active" href="friends.html">Friends</a>
+        <a href="profile.html">My Profile</a>
+        <a href="market.html">Marketplace</a>
+      </nav>
+      <div class="search">
+        <input type="search" placeholder="Search friends" />
+        <button class="primary">Search</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="page-header">
+        <div>
+          <h2>Your friends list</h2>
+          <p>Follow readers, see their shelves, and exchange recommendations.</p>
+        </div>
+        <button class="primary">Add new friend</button>
+      </section>
+
+      <section class="grid two">
+        <article class="card friend-card">
+          <div class="avatar">SR</div>
+          <div>
+            <h3>Sara R.</h3>
+            <p class="muted">Currently reading: “The Priory of the Orange Tree”</p>
+            <div class="pill-row">
+              <span class="pill">Fantasy</span>
+              <span class="pill">5 books/month</span>
+            </div>
+          </div>
+          <button class="ghost">View shelf</button>
+        </article>
+
+        <article class="card friend-card">
+          <div class="avatar">JT</div>
+          <div>
+            <h3>Jamal T.</h3>
+            <p class="muted">Currently reading: “Educated”</p>
+            <div class="pill-row">
+              <span class="pill">Memoir</span>
+              <span class="pill">Goal: 40 books</span>
+            </div>
+          </div>
+          <button class="ghost">View shelf</button>
+        </article>
+
+        <article class="card friend-card">
+          <div class="avatar">LW</div>
+          <div>
+            <h3>Lina W.</h3>
+            <p class="muted">Currently reading: “The Secret History”</p>
+            <div class="pill-row">
+              <span class="pill">Dark academia</span>
+              <span class="pill">Trading 6 books</span>
+            </div>
+          </div>
+          <button class="ghost">View shelf</button>
+        </article>
+
+        <article class="card friend-card">
+          <div class="avatar">KC</div>
+          <div>
+            <h3>Kevin C.</h3>
+            <p class="muted">Currently reading: “The Martian”</p>
+            <div class="pill-row">
+              <span class="pill">Sci-fi</span>
+              <span class="pill">3 new reviews</span>
+            </div>
+          </div>
+          <button class="ghost">View shelf</button>
+        </article>
+      </section>
+
+      <section class="panel">
+        <h3>Suggested friends</h3>
+        <div class="chips">
+          <button class="chip">@booklover_emma</button>
+          <button class="chip">@quietbibliophile</button>
+          <button class="chip">@thrillerfan</button>
+          <button class="chip">@fantasyforge</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Bookclub Hub © 2026 • Friends</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

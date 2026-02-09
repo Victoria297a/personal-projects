@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marketplace • Bookclub Hub</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header compact">
+      <div class="brand">
+        <div class="logo">📚</div>
+        <div>
+          <h1>Bookclub Hub</h1>
+          <p class="tagline">Marketplace</p>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="community.html">Community</a>
+        <a href="friends.html">Friends</a>
+        <a href="profile.html">My Profile</a>
+        <a class="active" href="market.html">Marketplace</a>
+      </nav>
+      <div class="search">
+        <input id="market-search" type="search" placeholder="Search listings" />
+        <button class="primary">Search</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="page-header">
+        <div>
+          <h2>Book trading & shop</h2>
+          <p>List your books for sale or exchange with readers nearby.</p>
+        </div>
+        <button class="primary">Create listing</button>
+      </section>
+
+      <section class="grid three">
+        <article class="card listing">
+          <div class="listing-tag">For sale</div>
+          <h3>The Song of Achilles</h3>
+          <p class="muted">Paperback • Like new</p>
+          <p class="price">€8</p>
+          <div class="pill-row">
+            <span class="pill">Pickup: Sofia Center</span>
+            <span class="pill">Seller: @alina</span>
+          </div>
+          <button class="ghost">Message seller</button>
+        </article>
+
+        <article class="card listing">
+          <div class="listing-tag swap">Swap</div>
+          <h3>Atomic Habits</h3>
+          <p class="muted">Hardcover • Great condition</p>
+          <p class="price">Swap for: non-fiction</p>
+          <div class="pill-row">
+            <span class="pill">Open to offers</span>
+            <span class="pill">Trader: @mila_reads</span>
+          </div>
+          <button class="ghost">Offer trade</button>
+        </article>
+
+        <article class="card listing">
+          <div class="listing-tag">For sale</div>
+          <h3>Norwegian Wood</h3>
+          <p class="muted">Paperback • Good condition</p>
+          <p class="price">€5</p>
+          <div class="pill-row">
+            <span class="pill">Ship or pickup</span>
+            <span class="pill">Seller: @ibookish</span>
+          </div>
+          <button class="ghost">Message seller</button>
+        </article>
+      </section>
+
+      <section class="grid two">
+        <article class="card">
+          <h3>Post a listing</h3>
+          <form class="form">
+            <label>
+              Book title
+              <input type="text" placeholder="Enter title" />
+            </label>
+            <label>
+              Listing type
+              <select>
+                <option>For sale</option>
+                <option>Swap</option>
+                <option>Giveaway</option>
+              </select>
+            </label>
+            <label>
+              Condition
+              <select>
+                <option>Like new</option>
+                <option>Very good</option>
+                <option>Good</option>
+                <option>Fair</option>
+              </select>
+            </label>
+            <label>
+              Price / Swap details
+              <input type="text" placeholder="€ or preferred trade" />
+            </label>
+            <label>
+              Notes
+              <textarea rows="3" placeholder="Add pickup details"></textarea>
+            </label>
+            <button class="primary" type="submit">Publish listing</button>
+          </form>
+        </article>
+
+        <article class="card">
+          <h3>How exchanges work</h3>
+          <ol class="list">
+            <li>Create a listing with photos and a description.</li>
+            <li>Chat with interested readers to agree on details.</li>
+            <li>Meet safely or ship and confirm the exchange.</li>
+          </ol>
+          <div class="callout">
+            <h4>Safety tips</h4>
+            <p>Meet in public places, confirm details in chat, and keep exchanges respectful.</p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Bookclub Hub © 2026 • Marketplace</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
