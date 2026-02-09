@@ -1,131 +1,136 @@
-// Sample Expense Documents for MongoDB
+/**
+ * SAMPLE_DATA.js
+ * 
+ * This file contains sample MongoDB documents and queries for the Budget Tracker.
+ * Use this file with: mongosh < SAMPLE_DATA.js
+ * 
+ * MongoDB Shell Script - Valid for mongosh/mongo shell
+ */
 
-// Example 1: Grocery expense
-{
-  "_id": ObjectId("507f1f77bcf86cd799439011"),
-  "user": ObjectId("507f191e810c19729de860ea"),
-  "amount": 67.89,
-  "category": "Groceries",
-  "description": "Weekly grocery shopping at Whole Foods",
-  "date": ISODate("2026-02-09T00:00:00Z"),
-  "createdAt": ISODate("2026-02-09T14:32:10.123Z"),
-  "updatedAt": ISODate("2026-02-09T14:32:10.123Z")
-}
+// Use the budget_tracker database
+use("budget_tracker");
 
-// Example 2: Restaurant expense
-{
-  "_id": ObjectId("507f1f77bcf86cd799439012"),
-  "user": ObjectId("507f191e810c19729de860ea"),
-  "amount": 45.50,
-  "category": "Restaurants",
-  "description": "Dinner at local Italian restaurant",
-  "date": ISODate("2026-02-08T00:00:00Z"),
-  "createdAt": ISODate("2026-02-08T19:45:30.456Z"),
-  "updatedAt": ISODate("2026-02-08T19:45:30.456Z")
-}
+// Clear existing data (optional)
+// db.expenses.deleteMany({});
+// db.users.deleteMany({});
 
-// Example 3: Subscription
-{
-  "_id": ObjectId("507f1f77bcf86cd799439013"),
-  "user": ObjectId("507f191e810c19729de860ea"),
-  "amount": 14.99,
-  "category": "Subscription",
-  "description": "Monthly streaming service",
-  "date": ISODate("2026-02-01T00:00:00Z"),
-  "createdAt": ISODate("2026-02-01T10:00:00.789Z"),
-  "updatedAt": ISODate("2026-02-01T10:00:00.789Z")
-}
+// Sample User Document
+const userId = new ObjectId();
+db.users.insertOne({
+  _id: userId,
+  name: "Vicky",
+  email: "vicky@example.com",
+  password: "hashed_password_here",
+  currency: "USD",
+  monthlyBudget: 3000,
+  createdAt: new Date(),
+  updatedAt: new Date()
+});
 
-// Example 4: Rent
-{
-  "_id": ObjectId("507f1f77bcf86cd799439014"),
-  "user": ObjectId("507f191e810c19729de860ea"),
-  "amount": 1200.00,
-  "category": "Rent",
-  "description": "Monthly rent payment",
-  "date": ISODate("2026-02-01T00:00:00Z"),
-  "createdAt": ISODate("2026-02-01T08:00:00.123Z"),
-  "updatedAt": ISODate("2026-02-01T08:00:00.123Z")
-}
+console.log("✅ User created with ID:", userId);
 
-// Example 5: Travel
-{
-  "_id": ObjectId("507f1f77bcf86cd799439015"),
-  "user": ObjectId("507f191e810c19729de860ea"),
-  "amount": 150.00,
-  "category": "Travel",
-  "description": "Uber ride to airport",
-  "date": ISODate("2026-02-07T00:00:00Z"),
-  "createdAt": ISODate("2026-02-07T15:20:45.234Z"),
-  "updatedAt": ISODate("2026-02-07T15:20:45.234Z")
-}
+// Sample Expense Documents
+const expenses = [
+  {
+    user: userId,
+    amount: 67.89,
+    category: "Groceries",
+    description: "Weekly grocery shopping at Whole Foods",
+    date: new Date("2026-02-09"),
+    createdAt: new Date("2026-02-09T14:32:10Z"),
+    updatedAt: new Date("2026-02-09T14:32:10Z")
+  },
+  {
+    user: userId,
+    amount: 45.50,
+    category: "Restaurants",
+    description: "Dinner at local Italian restaurant",
+    date: new Date("2026-02-08"),
+    createdAt: new Date("2026-02-08T19:45:30Z"),
+    updatedAt: new Date("2026-02-08T19:45:30Z")
+  },
+  {
+    user: userId,
+    amount: 14.99,
+    category: "Subscription",
+    description: "Monthly streaming service",
+    date: new Date("2026-02-01"),
+    createdAt: new Date("2026-02-01T10:00:00Z"),
+    updatedAt: new Date("2026-02-01T10:00:00Z")
+  },
+  {
+    user: userId,
+    amount: 1200.00,
+    category: "Rent",
+    description: "Monthly rent payment",
+    date: new Date("2026-02-01"),
+    createdAt: new Date("2026-02-01T08:00:00Z"),
+    updatedAt: new Date("2026-02-01T08:00:00Z")
+  },
+  {
+    user: userId,
+    amount: 150.00,
+    category: "Travel",
+    description: "Uber ride to airport",
+    date: new Date("2026-02-07"),
+    createdAt: new Date("2026-02-07T15:20:45Z"),
+    updatedAt: new Date("2026-02-07T15:20:45Z")
+  },
+  {
+    user: userId,
+    amount: 50.00,
+    category: "Gym",
+    description: "Monthly gym membership",
+    date: new Date("2026-02-01"),
+    createdAt: new Date("2026-02-01T09:15:00Z"),
+    updatedAt: new Date("2026-02-01T09:15:00Z")
+  },
+  {
+    user: userId,
+    amount: 5.75,
+    category: "Coffee",
+    description: "Latte at local café",
+    date: new Date("2026-02-09"),
+    createdAt: new Date("2026-02-09T08:30:00Z"),
+    updatedAt: new Date("2026-02-09T08:30:00Z")
+  },
+  {
+    user: userId,
+    amount: 120.00,
+    category: "Car",
+    description: "Oil change and tire rotation",
+    date: new Date("2026-02-05"),
+    createdAt: new Date("2026-02-05T16:45:20Z"),
+    updatedAt: new Date("2026-02-05T16:45:20Z")
+  },
+  {
+    user: userId,
+    amount: 35.00,
+    category: "Activities",
+    description: "Movie tickets (2)",
+    date: new Date("2026-02-06"),
+    createdAt: new Date("2026-02-06T19:00:10Z"),
+    updatedAt: new Date("2026-02-06T19:00:10Z")
+  }
+];
 
-// Example 6: Gym
-{
-  "_id": ObjectId("507f1f77bcf86cd799439016"),
-  "user": ObjectId("507f191e810c19729de860ea"),
-  "amount": 50.00,
-  "category": "Gym",
-  "description": "Monthly gym membership",
-  "date": ISODate("2026-02-01T00:00:00Z"),
-  "createdAt": ISODate("2026-02-01T09:15:00.567Z"),
-  "updatedAt": ISODate("2026-02-01T09:15:00.567Z")
-}
+// Insert all expenses
+const result = db.expenses.insertMany(expenses);
+console.log("✅ Inserted", result.insertedIds.length, "expenses");
 
-// Example 7: Coffee
-{
-  "_id": ObjectId("507f1f77bcf86cd799439017"),
-  "user": ObjectId("507f191e810c19729de860ea"),
-  "amount": 5.75,
-  "category": "Coffee",
-  "description": "Latte at local café",
-  "date": ISODate("2026-02-09T00:00:00Z"),
-  "createdAt": ISODate("2026-02-09T08:30:00.890Z"),
-  "updatedAt": ISODate("2026-02-09T08:30:00.890Z")
-}
 
-// Example 8: Car maintenance
-{
-  "_id": ObjectId("507f1f77bcf86cd799439018"),
-  "user": ObjectId("507f191e810c19729de860ea"),
-  "amount": 120.00,
-  "category": "Car",
-  "description": "Oil change and tire rotation",
-  "date": ISODate("2026-02-05T00:00:00Z"),
-  "createdAt": ISODate("2026-02-05T16:45:20.345Z"),
-  "updatedAt": ISODate("2026-02-05T16:45:20.345Z")
-}
 
-// Example 9: Activities
-{
-  "_id": ObjectId("507f1f77bcf86cd799439019"),
-  "user": ObjectId("507f191e810c19729de860ea"),
-  "amount": 35.00,
-  "category": "Activities",
-  "description": "Movie tickets (2)",
-  "date": ISODate("2026-02-06T00:00:00Z"),
-  "createdAt": ISODate("2026-02-06T19:00:10.678Z"),
-  "updatedAt": ISODate("2026-02-06T19:00:10.678Z")
-}
 
 // ======================================
-// MongoDB Queries
+// USEFUL QUERIES
+// ======================================
 
 // Get all expenses
-db.expenses.find()
-
-// Get expenses for February 2026
-db.expenses.find({
-  date: {
-    $gte: ISODate("2026-02-01"),
-    $lt: ISODate("2026-03-01")
-  }
-})
-
-// Get expenses by category
-db.expenses.find({ category: "Groceries" })
+console.log("\n📊 All expenses:");
+db.expenses.find().pretty();
 
 // Get total spending
+console.log("\n💰 Total spending:");
 db.expenses.aggregate([
   {
     $group: {
@@ -133,9 +138,10 @@ db.expenses.aggregate([
       total: { $sum: "$amount" }
     }
   }
-])
+]).pretty();
 
 // Get spending by category
+console.log("\n📈 Spending by category:");
 db.expenses.aggregate([
   {
     $group: {
@@ -145,9 +151,10 @@ db.expenses.aggregate([
     }
   },
   { $sort: { total: -1 } }
-])
+]).pretty();
 
 // Get monthly totals
+console.log("\n📅 Monthly totals:");
 db.expenses.aggregate([
   {
     $group: {
@@ -157,9 +164,10 @@ db.expenses.aggregate([
     }
   },
   { $sort: { _id: -1 } }
-])
+]).pretty();
 
-// Get average expense amount
+// Get average by category
+console.log("\n📊 Average expense per category:");
 db.expenses.aggregate([
   {
     $group: {
@@ -167,17 +175,32 @@ db.expenses.aggregate([
       average: { $avg: "$amount" }
     }
   }
-])
+]).pretty();
 
-// Delete old expenses (older than 1 year)
-db.expenses.deleteMany({
+// Get expenses for February 2026
+console.log("\n📅 February 2026 expenses:");
+db.expenses.find({
   date: {
-    $lt: ISODate("2025-01-01")
+    $gte: new Date("2026-02-01"),
+    $lt: new Date("2026-03-01")
   }
-})
+}).pretty();
 
-// Update an expense
-db.expenses.updateOne(
-  { _id: ObjectId("507f1f77bcf86cd799439011") },
-  { $set: { amount: 75.00, description: "Updated description" } }
-)
+// Get expenses by category
+console.log("\n🛒 Groceries only:");
+db.expenses.find({ category: "Groceries" }).pretty();
+
+// Delete old expenses (older than 1 year) - EXAMPLE ONLY
+// db.expenses.deleteMany({
+//   date: {
+//     $lt: new Date("2025-01-01")
+//   }
+// });
+
+// Update an expense - EXAMPLE ONLY
+// db.expenses.updateOne(
+//   { _id: ObjectId("507f1f77bcf86cd799439011") },
+//   { $set: { amount: 75.00, description: "Updated description" } }
+// );
+
+console.log("\n✅ Sample data loaded successfully!");
