@@ -1,0 +1,8 @@
+{
+  "name": "budget-tracker-frontend",
+  "version": "1.0.0",
+  "description": "Budget tracker web application",
+  "scripts": {
+    "dev": "python -m http.server 8000"
+  }
+}
