@@ -32,17 +32,40 @@ if (!getToken()) {
   window.location.href = "login.html";
 }
 
-// Set today's date as default
-document.getElementById("date").valueAsDate = new Date();
-
-// Event Listeners
-document.getElementById("expense-form").addEventListener("submit", addExpense);
-document.getElementById("filter-category").addEventListener("change", filterExpenses);
-document.getElementById("filter-month").addEventListener("change", filterExpenses);
-document.getElementById("clear-filters").addEventListener("click", clearFilters);
-
 // Initialize on page load
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM Content Loaded - Initializing app");
+  
+  // Set today's date as default
+  const dateInput = document.getElementById("date");
+  if (dateInput) {
+    dateInput.valueAsDate = new Date();
+  }
+  
+  // Event Listeners
+  const expenseForm = document.getElementById("expense-form");
+  if (expenseForm) {
+    expenseForm.addEventListener("submit", addExpense);
+    console.log("Expense form listener attached");
+  } else {
+    console.error("expense-form not found!");
+  }
+  
+  const filterCategory = document.getElementById("filter-category");
+  if (filterCategory) {
+    filterCategory.addEventListener("change", filterExpenses);
+  }
+  
+  const filterMonth = document.getElementById("filter-month");
+  if (filterMonth) {
+    filterMonth.addEventListener("change", filterExpenses);
+  }
+  
+  const clearFiltersBtn = document.getElementById("clear-filters");
+  if (clearFiltersBtn) {
+    clearFiltersBtn.addEventListener("click", clearFilters);
+  }
+  
   loadExpenses();
 });
 
@@ -54,6 +77,8 @@ async function addExpense(e) {
   const category = document.getElementById("category").value;
   const description = document.getElementById("description").value;
   const date = document.getElementById("date").value;
+
+  console.log("Adding expense:", { amount, category, description, date });
 
   if (!amount || !category || !date) {
     alert("Please fill in all required fields");
@@ -69,8 +94,10 @@ async function addExpense(e) {
 
   try {
     const token = getToken();
+    console.log("Token present:", !!token);
 
     if (token) {
+      console.log("Sending to API:", `${API_URL}/expenses`);
       const response = await fetch(`${API_URL}/expenses`, {
         method: "POST",
         headers: {
@@ -80,11 +107,16 @@ async function addExpense(e) {
         body: JSON.stringify(newExpense),
       });
 
+      console.log("Response status:", response.status);
+
       if (!response.ok) {
-        throw new Error("Failed to save to API");
+        const errorData = await response.json();
+        console.error("API Error:", errorData);
+        throw new Error(errorData.error || "Failed to save to API");
       }
 
       const saved = await response.json();
+      console.log("Expense saved:", saved);
       expenses.push(saved);
     } else {
       // Fallback to local storage when not logged in
@@ -98,9 +130,10 @@ async function addExpense(e) {
 
     // Refresh UI
     updateUI();
+    console.log("UI updated, total expenses:", expenses.length);
   } catch (error) {
     console.error("Error adding expense:", error);
-    alert("Failed to add expense");
+    alert("Failed to add expense: " + error.message);
   }
 }
 
@@ -108,30 +141,41 @@ async function addExpense(e) {
 async function loadExpenses() {
   try {
     const token = getToken();
+    console.log("Loading expenses, token present:", !!token);
 
     if (token) {
+      console.log("Fetching from API:", `${API_URL}/expenses`);
       const response = await fetch(`${API_URL}/expenses`, {
         headers: { ...getAuthHeaders() },
       });
 
+      console.log("Load response status:", response.status);
+
       if (response.ok) {
         expenses = await response.json();
+        console.log("Expenses loaded from API:", expenses.length);
       } else {
+        const errorData = await response.json().catch(() => ({}));
+        console.error("Failed to load expenses:", errorData);
         expenses = [];
       }
     } else {
       const stored = localStorage.getItem("expenses");
       expenses = stored ? JSON.parse(stored) : [];
+      console.log("Expenses loaded from localStorage:", expenses.length);
     }
 
     updateUI();
   } catch (error) {
     console.error("Error loading expenses:", error);
+    expenses = [];
+    updateUI();
   }
 }
 
 // Update UI
 function updateUI() {
+  console.log("updateUI called with", expenses.length, "expenses");
   if (!getToken()) {
     localStorage.setItem("expenses", JSON.stringify(expenses));
   }
@@ -278,7 +322,14 @@ function clearFilters() {
 
 // Render Expenses
 function renderExpenses(items = expenses) {
+  console.log("Rendering expenses, count:", items.length);
   const container = document.getElementById("expenses-container");
+  
+  if (!container) {
+    console.error("expenses-container element not found!");
+    return;
+  }
+  
   container.innerHTML = "";
 
   if (items.length === 0) {
@@ -318,6 +369,8 @@ function renderExpenses(items = expenses) {
     `;
     container.appendChild(item);
   });
+  
+  console.log("Rendered", sorted.length, "expense items");
 }
 
 // Delete Expense

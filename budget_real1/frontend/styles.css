@@ -5,11 +5,16 @@
 }
 
 :root {
-  --primary: #1a1a1a;
-  --secondary: #f5f5f5;
-  --accent: #2563eb;
-  --border: #e5e5e5;
-  --text-light: #666;
+  --bg-primary: #0f1419;
+  --bg-secondary: #1a1f2e;
+  --bg-card: #1e2431;
+  --bg-card-hover: #252b3b;
+  --primary: #ffffff;
+  --secondary: #8b92a7;
+  --accent: #4a90e2;
+  --accent-hover: #357abd;
+  --border: #2a3142;
+  --text-light: #6b7280;
   --success: #10b981;
   --warning: #f59e0b;
   --danger: #ef4444;
@@ -29,9 +34,30 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, sans-serif;
-  background: #fafafa;
+  background: var(--bg-primary);
   color: var(--primary);
   line-height: 1.6;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .container {
@@ -43,18 +69,22 @@ body {
 .header {
   text-align: center;
   margin-bottom: 40px;
-  padding: 20px 0;
-  border-bottom: 1px solid var(--border);
+  padding: 24px 0;
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.6s ease-out;
 }
 
 .header h1 {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 700;
   margin-bottom: 8px;
+  color: var(--primary);
 }
 
 .subtitle {
-  color: var(--text-light);
+  color: var(--secondary);
   font-size: 14px;
 }
 
@@ -67,23 +97,23 @@ body {
 }
 
 .header-nav a {
-  color: var(--text-light);
+  color: var(--secondary);
   font-size: 13px;
   text-decoration: none;
-  padding: 6px 12px;
+  padding: 8px 16px;
   border-radius: 999px;
   border: 1px solid transparent;
   transition: all 0.2s;
 }
 
 .header-nav a:hover {
-  border-color: var(--border);
+  background: var(--bg-card);
   color: var(--primary);
 }
 
 .header-nav a.active {
-  color: var(--primary);
-  border-color: var(--border);
+  color: var(--accent);
+  background: rgba(74, 144, 226, 0.1);
   font-weight: 600;
 }
 
@@ -95,16 +125,18 @@ body {
 }
 
 .add-expense {
-  background: white;
+  background: var(--bg-card);
   padding: 24px;
-  border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   height: fit-content;
+  border: 1px solid var(--border);
 }
 
 .add-expense h2 {
   font-size: 18px;
   margin-bottom: 20px;
+  color: var(--primary);
 }
 
 .form-group {
@@ -116,75 +148,89 @@ body {
   font-size: 13px;
   font-weight: 600;
   color: var(--primary);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .form-group input,
 .form-group select {
   width: 100%;
-  padding: 10px 12px;
+  padding: 12px 14px;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 14px;
-  background: white;
+  background: var(--bg-secondary);
   color: var(--primary);
-  transition: border-color 0.2s;
+  transition: all 0.2s;
 }
 
 .form-group input:focus,
 .form-group select:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  background: var(--bg-card-hover);
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
 }
 
 .btn-primary,
 .btn-secondary {
   width: 100%;
-  padding: 12px 16px;
+  padding: 14px 20px;
   border: none;
-  border-radius: 8px;
-  font-size: 14px;
+  border-radius: 12px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn-primary {
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent) 0%, #357abd 100%);
   color: white;
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
 }
 
 .btn-primary:hover {
-  background: #1d4ed8;
+  background: linear-gradient(135deg, #357abd 0%, #2a5f99 100%);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 6px 25px rgba(74, 144, 226, 0.5);
+}
+
+.btn-primary:active {
+  transform: translateY(0px);
 }
 
 .btn-secondary {
-  background: var(--secondary);
+  background: var(--bg-card);
   color: var(--primary);
   border: 1px solid var(--border);
   font-weight: 500;
 }
 
 .btn-secondary:hover {
-  background: white;
+  background: var(--bg-card-hover);
+  border-color: var(--accent);
+  transform: translateY(-1px);
 }
 
 .btn-delete {
-  background: var(--danger);
-  color: white;
-  padding: 6px 12px;
-  border: none;
-  border-radius: 6px;
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  padding: 8px 14px;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 8px;
   font-size: 12px;
   cursor: pointer;
   transition: all 0.2s;
+  font-weight: 500;
 }
 
 .btn-delete:hover {
-  background: #dc2626;
+  background: #ef4444;
+  color: white;
+  border-color: #ef4444;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
 }
 
 .dashboard {
@@ -200,38 +246,62 @@ body {
 }
 
 .stat-card {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  background: var(--bg-card);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   text-align: center;
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), rgba(74, 144, 226, 0.3));
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(74, 144, 226, 0.2);
+  border-color: rgba(74, 144, 226, 0.3);
 }
 
 .stat-card h3 {
-  font-size: 13px;
-  color: var(--text-light);
+  font-size: 12px;
+  color: var(--secondary);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 8px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
   font-weight: 600;
 }
 
 .stat-card .amount {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 700;
   color: var(--accent);
+  text-shadow: 0 2px 10px rgba(74, 144, 226, 0.3);
 }
 
 .chart-container {
-  background: white;
-  padding: 24px;
-  border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  background: var(--bg-card);
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border);
 }
 
 .chart-container h2 {
-  font-size: 16px;
-  margin-bottom: 16px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: var(--primary);
+  font-weight: 600;
 }
 
 #spending-chart {
@@ -239,15 +309,18 @@ body {
 }
 
 .category-breakdown {
-  background: white;
+  background: var(--bg-card);
   padding: 24px;
-  border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border);
 }
 
 .category-breakdown h2 {
-  font-size: 16px;
-  margin-bottom: 16px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: var(--primary);
+  font-weight: 600;
 }
 
 .categories-list {
@@ -259,15 +332,17 @@ body {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  padding: 12px;
-  border-radius: 8px;
-  background: var(--secondary);
+  padding: 14px;
+  border-radius: 12px;
+  background: var(--bg-secondary);
   transition: all 0.2s;
+  border: 1px solid transparent;
 }
 
 .category-item:hover {
-  background: white;
-  border: 1px solid var(--border);
+  background: var(--bg-card-hover);
+  border-color: var(--border);
+  transform: translateX(4px);
 }
 
 .category-name {
@@ -290,6 +365,7 @@ body {
 .cat-title {
   font-size: 14px;
   font-weight: 600;
+  color: var(--primary);
 }
 
 .cat-percentage {
@@ -302,7 +378,7 @@ body {
 }
 
 .cat-value {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--primary);
 }
@@ -313,11 +389,12 @@ body {
 }
 
 .expenses-list {
-  background: white;
+  background: var(--bg-card);
   padding: 24px;
-  border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   grid-column: 1 / -1;
+  border: 1px solid var(--border);
 }
 
 .list-header {
@@ -331,6 +408,8 @@ body {
 
 .list-header h2 {
   font-size: 18px;
+  color: var(--primary);
+  font-weight: 600;
 }
 
 .filters {
@@ -340,13 +419,20 @@ body {
 }
 
 .filter-select {
-  padding: 8px 12px;
+  padding: 10px 14px;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 14px;
-  background: white;
+  background: var(--bg-secondary);
+  color: var(--primary);
   cursor: pointer;
   min-width: 150px;
+  transition: all 0.2s;
+}
+
+.filter-select:hover {
+  border-color: var(--accent);
+  background: var(--bg-card-hover);
 }
 
 .expenses-container {
@@ -362,32 +448,37 @@ body {
   align-items: center;
   gap: 16px;
   padding: 16px;
-  border-radius: 8px;
-  background: var(--secondary);
+  border-radius: 12px;
+  background: var(--bg-secondary);
   border-left: 4px solid var(--accent);
   transition: all 0.2s;
+  border: 1px solid transparent;
 }
 
 .expense-item:hover {
-  background: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  background: var(--bg-card-hover);
+  border-color: var(--border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
 }
 
 .expense-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
-  background: rgba(0, 0, 0, 0.05);
+  font-size: 22px;
+  background: rgba(74, 144, 226, 0.1);
+  border: 1px solid rgba(74, 144, 226, 0.2);
 }
 
 .expense-details h4 {
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 4px;
+  color: var(--primary);
 }
 
 .expense-details p {
@@ -402,12 +493,12 @@ body {
 .expense-value {
   font-size: 16px;
   font-weight: 700;
-  color: var(--danger);
+  color: #ef4444;
 }
 
 .expense-date {
   font-size: 12px;
-  color: var(--text-light);
+  color: var(--secondary);
 }
 
 .expense-actions {
@@ -518,19 +609,19 @@ body {
 
 /* Scrollbar styling */
 .expenses-container::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 .expenses-container::-webkit-scrollbar-track {
-  background: var(--secondary);
-  border-radius: 3px;
+  background: var(--bg-secondary);
+  border-radius: 4px;
 }
 
 .expenses-container::-webkit-scrollbar-thumb {
   background: var(--border);
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
 .expenses-container::-webkit-scrollbar-thumb:hover {
-  background: #ccc;
+  background: var(--accent);
 }

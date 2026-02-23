@@ -11,35 +11,51 @@
 }
 
 .profile-card {
-  background: white;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border);
 }
 
 .profile-card h2 {
-  font-size: 18px;
-  margin-bottom: 12px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: var(--primary);
+  font-weight: 600;
 }
 
 .profile-row {
   display: grid;
-  gap: 6px;
-  margin-bottom: 12px;
+  gap: 8px;
+  margin-bottom: 16px;
 }
 
 .profile-row label {
   font-size: 13px;
   font-weight: 600;
+  color: var(--primary);
 }
 
 .profile-row input,
 .profile-row select,
 .profile-row textarea {
-  padding: 10px 12px;
+  padding: 12px 14px;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 14px;
+  background: var(--bg-secondary);
+  color: var(--primary);
+  transition: all 0.2s;
+}
+
+.profile-row input:focus,
+.profile-row select:focus,
+.profile-row textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: var(--bg-card-hover);
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
 }
 
 .profile-actions {
@@ -51,22 +67,29 @@
 .preference-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  gap: 12px;
 }
 
 .preference-item {
-  padding: 12px;
-  border-radius: 10px;
-  background: var(--secondary);
+  padding: 14px;
+  border-radius: 12px;
+  background: var(--bg-secondary);
   border: 1px solid var(--border);
   font-size: 13px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: all 0.2s;
+}
+
+.preference-item:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent);
 }
 
 .preference-item input {
-  transform: scale(1.1);
+  transform: scale(1.2);
+  cursor: pointer;
 }
 
 @media (max-width: 960px) {
